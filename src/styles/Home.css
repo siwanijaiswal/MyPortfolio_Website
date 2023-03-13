@@ -128,8 +128,6 @@
   color: #edeff1;
   border-radius: 3px;
   box-shadow: 5px 5px 5px 5px #2d2c2c;
-  /* box-shadow: rgba(83, 163, 206, 0.2) 0px 2px 8px 0px; */
-  /* box-shadow: 0 -5px 3px -3px black,  0 -5px 3px -3px black, 0 -5px 3px -3px black,0 5px 3px -3px black; */
 }
 .skills .list .item:hover{
   box-shadow: 0 5px 3px -3px rgb(20, 65, 73),  0 -5px 3px -3px rgb(49, 60, 88);
