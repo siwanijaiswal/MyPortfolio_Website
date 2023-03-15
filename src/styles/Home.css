@@ -37,6 +37,8 @@
   color: var(--secondary-color);
   letter-spacing: 1px;
   border-bottom: 1px solid #514f4f;
+  font-family: "Times New Roman", Times, serif;
+  
 }
 
 .about-me::after {
@@ -47,6 +49,7 @@
   width: 10.84vw;
   height: 1px;
   background: #0e0d0d;
+  line-height: 5px;
 }
 
 .prompt {
@@ -55,8 +58,10 @@
   letter-spacing: 1px;
   font-family: 'Poppins', sans-serif;
   margin-top: 1.1vw;
+  text-indent: 100px;
   color: #0e0d0d;
 }
+
 
 .profile-option {
   display: flex;
@@ -141,15 +146,27 @@
   padding: 5px;
 }
 
+@media only screen and (max-width: 1112px) {
+  .prompt {
+    font-size: 2vw;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .aboutttt {
     flex-direction: column;
   }
 
   .prompt {
-    font-size: 2.5vw;
+    font-size: 3.5vw;
   }
-
+  .about-me {
+    font-size: 5.5vw;
+  }
+  .img-i {
+    width: 250px;
+    height: 200px;
+  }
   .skills {
     font-size: 1rem;
   }
@@ -168,6 +185,6 @@
   }
 
   .skills .list .item span {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 }

@@ -23,8 +23,7 @@ function Home() {
                     <h2>A Computer Engineering Student</h2>
                     <p className="prompt">
                         <p>I'm a Web developer with a passion for learning and creating.I love to learn about new
-                            technologies and apply to my work.</p>
-                        <span> I'm currently learning Data Structures and Algorithm. I'm Machine learning enthusiasts and open source contributor.I believe in learning together.</span>
+                            technologies and apply to my work.I'm currently learning Data Structures and Algorithm. I'm Machine learning enthusiasts and open source contributor.I believe in learning together.</p>
                     </p>
                     <div className="profile-option">
                         <a href={jais_resume} download="siwanijaiswal_resume.pdf">
