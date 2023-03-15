@@ -1,5 +1,5 @@
 import Proj1 from "../assets/Proj1.png";
-import Proj2 from "../assets/Proj2.png";
+import Projjj2 from "../assets/Projjj2.png";
 import proj3 from "../assets/proj3.png";
 import proj4 from "../assets/proj4.png";
 import proj5 from "../assets/proj5.png";
@@ -23,7 +23,7 @@ export const ProjectList = [
   },
   {
     name: "TextAnalyzer WebApp",
-    image: Proj2,
+    image: Projjj2,
     github: "https://github.com/siwanijaiswal/TextAnalyzer-ReactApp",
     liveLink: "https://text-utils-siwani.netlify.app/"
   },
