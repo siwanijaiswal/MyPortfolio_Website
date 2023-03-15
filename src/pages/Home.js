@@ -19,8 +19,8 @@ function Home() {
                     <img className="img-i" alt="" />
                 </div>
                 <div className="about">
-                    <h2 className="about-me "> Hi, I'm Siwani Jaiswal</h2>
-                    <h2>A Computer Engineering Student</h2>
+                    <h2 className="about-me "> Hey! I'm Siwani Jaiswal</h2>
+                    <h2 className="about-me">A Computer Engineering Student</h2>
                     <p className="prompt">
                         <p>I'm a Web developer with a passion for learning and creating.I love to learn about new
                             technologies and apply to my work.I'm currently learning Data Structures and Algorithm. I'm Machine learning enthusiasts and open source contributor.I believe in learning together.</p>

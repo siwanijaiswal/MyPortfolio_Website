@@ -36,20 +36,15 @@
   font-size: 2vw;
   color: var(--secondary-color);
   letter-spacing: 1px;
-  border-bottom: 1px solid #514f4f;
+  /* border-bottom: 1px solid #0bb18d; */
   font-family: "Times New Roman", Times, serif;
-  
 }
 
-.about-me::after {
-  content: '';
-  display: block;
-  position: absolute;
-  justify-content: center;
-  width: 10.84vw;
-  height: 1px;
-  background: #0e0d0d;
-  line-height: 5px;
+.about-me{
+  color: #04346f;
+   margin-left: 50px;
+   margin-right: 80px;
+   text-align: center;
 }
 
 .prompt {
@@ -61,7 +56,6 @@
   text-indent: 100px;
   color: #0e0d0d;
 }
-
 
 .profile-option {
   display: flex;
@@ -159,13 +153,22 @@
 
   .prompt {
     font-size: 3.5vw;
+    margin-top: 20px;
   }
   .about-me {
-    font-size: 5.5vw;
+    font-size: 4vw;
+  }
+
+  .skills .list {
+    width: 400px;
+    margin-left: 50px;
+    margin-right: 50px;
+
   }
   .img-i {
-    width: 250px;
-    height: 200px;
+    width: 200px;
+    height: 210px;
+    margin-bottom: 30px;
   }
   .skills {
     font-size: 1rem;
