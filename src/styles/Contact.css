@@ -115,10 +115,14 @@ input {
     max-width: 80%;
     margin: auto;
     margin-top: 90px;
+    padding-top: 20px;
     
   }
   .contact_form-input{
     height: 40px;
-    width: 120px;
+    width: 180px;
+  }
+  .leave{
+    margin-left: 18px;
   }
 }

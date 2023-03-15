@@ -152,11 +152,12 @@
   }
 
   .prompt {
+    
     font-size: 3.5vw;
     margin-top: 20px;
   }
   .about-me {
-    font-size: 4vw;
+    font-size: 3vw;
   }
 
   .skills .list {
