@@ -1,4 +1,107 @@
-*{
-    margin: 0;
-    padding: 0;
+:root {
+  --bg-color-dark: #020617;
+  --bg-secondary-dark: #0f172a;
+  --text-primary-dark: #f8fafc;
+  --text-secondary-dark: #94a3b8;
+  --glass-bg-dark: rgba(255, 255, 255, 0.03);
+  --glass-border-dark: rgba(255, 255, 255, 0.08);
+
+  --bg-color-light: #f8fafc;
+  --bg-secondary-light: #ffffff;
+  --text-primary-light: #0f172a;
+  --text-secondary-light: #475569;
+  --glass-bg-light: rgba(0, 0, 0, 0.02);
+  --glass-border-light: rgba(0, 0, 0, 0.08);
+
+  --accent-color: #8b5cf6;
+  --accent-hover: #7c3aed;
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --font-main: 'Inter', sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+}
+
+.App.dark {
+  --bg-color: var(--bg-color-dark);
+  --bg-secondary: var(--bg-secondary-dark);
+  --text-primary: var(--text-primary-dark);
+  --text-secondary: var(--text-secondary-dark);
+  --glass-bg: var(--glass-bg-dark);
+  --glass-border: var(--glass-border-dark);
+}
+
+.App.light {
+  --bg-color: var(--bg-color-light);
+  --bg-secondary: var(--bg-secondary-light);
+  --text-primary: var(--text-primary-light);
+  --text-secondary: var(--text-secondary-light);
+  --glass-bg: var(--glass-bg-light);
+  --glass-border: var(--glass-border-light);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+}
+
+.App {
+  min-height: 100vh;
+}
+
+.content {
+  padding-top: 100px; /* Space for fixed navbar */
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  transition: var(--transition-smooth);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent-color) 0%, #6366f1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: var(--transition-smooth);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }

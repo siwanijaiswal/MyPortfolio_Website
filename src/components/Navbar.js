@@ -1,32 +1,66 @@
-import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-scroll";
+import { useTheme } from "../helpers/ThemeContext";
+import { FaSun, FaMoon, FaBars, FaTimes } from "react-icons/fa";
 import "../styles/Navbar.css";
-import {GiHamburgerMenu} from 'react-icons/gi'
 
 function Navbar() {
   const [expandNavbar, setExpandNavbar] = useState(false);
-  const location = useLocation();
+  const [scrolled, setScrolled] = useState(false);
+  const { isDarkMode, toggleTheme } = useTheme();
+
   useEffect(() => {
-    setExpandNavbar(false);
-  }, [location]);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const navLinks = [
+    { name: "Home", to: "home" },
+    { name: "Projects", to: "projects" },
+    { name: "Experience", to: "experience" },
+    { name: "Contact", to: "contact" },
+  ];
+
   return (
-    <div className="navbar" id={expandNavbar ? "open" : "close"}>
-      <div className="toggleButton">
-        <button
-          onClick={() => {
-            setExpandNavbar((prev) => !prev);
-          }}
-        >
-          <GiHamburgerMenu />
-        </button>
+    <nav className={`navbar-container ${scrolled ? "scrolled" : ""}`}>
+      <div className="pill-navbar glass-card">
+        <div className="logo-section">
+          <span className="gradient-text logo-text">SJ</span>
+        </div>
+
+        <div className={`nav-links ${expandNavbar ? "active" : ""}`}>
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              to={link.to}
+              smooth={true}
+              duration={500}
+              spy={true}
+              activeClass="active"
+              offset={-100}
+              onClick={() => setExpandNavbar(false)}
+            >
+              {link.name}
+            </Link>
+          ))}
+        </div>
+
+        <div className="nav-actions">
+          <button onClick={toggleTheme} className="theme-toggle" title="Toggle Theme">
+            {isDarkMode ? <FaSun /> : <FaMoon />}
+          </button>
+          <button 
+            className="mobile-toggle" 
+            onClick={() => setExpandNavbar(!expandNavbar)}
+          >
+            {expandNavbar ? <FaTimes /> : <FaBars />}
+          </button>
+        </div>
       </div>
-      <div className="links">
-        <Link to="/"> Home </Link>
-        <Link to="/projects"> Projects </Link>
-        <Link to="/experience"> Experience </Link>
-        <Link to="/contact"> Contact </Link>
-      </div>
-    </div>
+    </nav>
   );
 }
 

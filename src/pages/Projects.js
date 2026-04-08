@@ -6,13 +6,22 @@ import "../styles/Projects.css";
 
 function Projects() {
   return (
-    <div className="projects">
-      <h1> My Projects</h1>
-      <div className="projectList">
+    <div className="projects-container section-container">
+      <div className="section-header">
+        <h4 className="section-subtitle">VISIT MY PROJECTS</h4>
+        <h2 className="section-title">My <span className="gradient-text">Portfolio</span></h2>
+      </div>
+      
+      <div className="project-grid">
         {ProjectList.map((project, idx) => {
-          console.log(project)
           return (
-            <ProjectItem id={idx} name={project.name} image={project.image} liveLink={project.liveLink} githubLink={project.github} />
+            <ProjectItem 
+              key={idx}
+              name={project.name} 
+              image={project.image} 
+              liveLink={project.liveLink} 
+              githubLink={project.github} 
+            />
           );
         })}
       </div>

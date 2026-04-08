@@ -1,45 +1,82 @@
-import React, { useRef } from 'react';
-import emailjs from '@emailjs/browser';
+import React, { useState } from 'react';
+import { FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaGithub, FaCopy, FaCheck } from 'react-icons/fa';
 import "../styles/Contact.css";
 
-const Contact = () =>{
-    const form = useRef();
+const Contact = () => {
+  const [copied, setCopied] = useState(false);
+  const email = "jaiswalsiwani123@gmail.com";
 
-    const sendEmail = (e) => {
-      e.preventDefault();
-  
-      emailjs.sendForm('service_q0gih01', 'template_b9vro65', form.current, 'ChsIuPTLqYAc2jF0t')
-        e.target.reset();
-    };
-  
-    return(
-        <div className = "contact_section" id="contact">
-            <h2 className="section_title">Get In Touch</h2>
-            <h3 className="section_title">Contact Me</h3>
-               <div className="contact_content">
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
-             <form  ref={form} onSubmit={sendEmail} className="contact-form">
-                <div className=" contact_form-div">
-                    <label className=" contact_form-tag">Name</label>
-                    <input type="text" name="name" className=" contact_form-input" placeholder="Your Name"/>
-                </div>
-                <div className=" contact_form-div">
-                    <label className=" contact_form-tag">Email-id</label>
-                    <input type="email" name="email" className=" contact_form-input" placeholder="Your email"/>
-                </div>
+  return (
+    <div className="contact-container section-container" id="contact">
+      <div className="bg-text-contact">CONTACT</div>
+      
+      <div className="section-header">
+        <div className="status-badge">
+          <span className="pulse"></span> Available for new projects
+        </div>
+        <h4 className="section-subtitle">SAY HELLO</h4>
+        <h2 className="section-title">Get In <span className="gradient-text">Touch</span></h2>
+      </div>
 
-                <div className=" contact_form-div contact_form-area">
-                    <label className=" contact_form-tag">Message</label>
-                    <textarea type="text" name="message" placeholder="Type your message" cols="30" rows="10" className=" contact_form-input"></textarea>
-                </div>
-                <button class="leave">SEND</button>
-
-             </form>
-
-               </div>
+      <div className="contact-premium-grid">
+        {/* Email Card */}
+        <div className="premium-contact-card glass-card fade-in">
+          <div className="premium-icon-box">
+            <FaEnvelope />
+            <div className="icon-glow"></div>
+          </div>
+          <div className="premium-card-content">
+            <span className="premium-label">Email Me</span>
+            <h3 className="premium-value">{email}</h3>
+            <button 
+              onClick={copyToClipboard} 
+              className={`premium-copy-btn ${copied ? 'success' : ''}`}
+            >
+              {copied ? <><FaCheck /> Copied!</> : <><FaCopy /> Copy Address</>}
+            </button>
+          </div>
         </div>
 
+        {/* Location Card */}
+        <div className="premium-contact-card glass-card fade-in delay-1">
+          <div className="premium-icon-box">
+            <FaMapMarkerAlt />
+            <div className="icon-glow"></div>
+          </div>
+          <div className="premium-card-content">
+            <span className="premium-label">Location</span>
+            <h3 className="premium-value">Ahmedabad, India</h3>
+            <p className="premium-subtext">Gujarat | Available for Remote Work</p>
+          </div>
+        </div>
 
-    );
+        {/* Social Card */}
+        <div className="premium-contact-card glass-card fade-in delay-2">
+          <div className="premium-icon-box">
+            <FaLinkedin />
+            <div className="icon-glow"></div>
+          </div>
+          <div className="premium-card-content">
+            <span className="premium-label">Let's Connect</span>
+            <div className="premium-social-row">
+              <a href="https://www.linkedin.com/in/siwani-jaiswal/" target="_blank" rel="noreferrer" className="social-pill linkedin">
+                <FaLinkedin /> LinkedIn
+              </a>
+              <a href="https://github.com/siwanijaiswal" target="_blank" rel="noreferrer" className="social-pill github">
+                <FaGithub /> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
+
 export default Contact;

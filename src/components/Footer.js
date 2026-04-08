@@ -29,19 +29,29 @@ function Footer() {
     },
   ]
   return (
-    <div className="footer">
-      <div className="socialMedia">
-        {socials.map((social) => {
-          return (
-            <a href={social.link} target="_blank" rel="noreferrer">
-              {social.icon}
-            </a>
-          )
-        })}
+    <footer className="footer">
+      <div className="footer-container">
+        <div className="footer-left">
+          <div className="logo footer-logo">
+            <span className="gradient-text">SJ</span>
+          </div>
+          <p className="footer-tagline">Computer Engineering Student & Web Developer</p>
+        </div>
+        
+        <div className="footer-right">
+          <div className="socialMedia">
+            {socials.map((social, index) => (
+              <a key={index} href={social.link} target="_blank" rel="noreferrer" className="social-icon">
+                {social.icon}
+              </a>
+            ))}
+          </div>
+          <div className="footer-info">
+            <p className="copyright">&copy; {new Date().getFullYear()} Siwani Jaiswal</p>
+          </div>
+        </div>
       </div>
-      <p> &copy; Siwani Jaiswal</p>
-      <h2>Made with ❤️ by Sibu</h2>
-    </div>
+    </footer>
   );
 }
 
