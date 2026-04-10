@@ -1,5 +1,5 @@
 .projects-container {
-  padding: 100px 0;
+  padding: 40px 0;
 }
 
 .section-header {
@@ -98,5 +98,18 @@
 @media (max-width: 768px) {
   .project-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .section-header {
+    margin-bottom: 30px;
+  }
+  .projects-container {
+    padding: 20px 0;
+  }
+  .projectItem {
+    padding: 20px;
+  }
+  .project-image-wrapper {
+    margin-bottom: 16px;
   }
 }

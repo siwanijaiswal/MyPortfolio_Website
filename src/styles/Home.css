@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: space-between;
   min-height: 80vh;
-  gap: 60px;
+  gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -19,20 +19,20 @@
 .welcome-text {
   font-size: 0.9rem;
   letter-spacing: 3px;
-  color: var(--text-secondary);
-  margin-bottom: 20px;
+  color: var(--text-primary);
+  margin-bottom: 15px;
 }
 
 .name-header {
   font-size: 4.5rem;
   line-height: 1.1;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 
 .typewriter-container {
   font-size: 2.5rem;
   font-weight: 600;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
   height: 1.2em;
 }
 
@@ -48,9 +48,9 @@
 
 .hero-bio {
   font-size: 1.1rem;
-  color: var(--text-secondary);
+  color: var(--text-primary);
   line-height: 1.8;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
   max-width: 600px;
 }
 
@@ -118,7 +118,7 @@
 }
 
 .expertise-section {
-  padding: 100px 0;
+  padding: 10px 0;
 }
 
 .section-title {
@@ -142,6 +142,15 @@
   font-size: 1.5rem;
   margin-bottom: 24px;
   color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+  .expertise-section {
+    padding: 40px 0;
+  }
+  .section-title {
+    margin-bottom: 30px;
+  }
 }
 
 .skill-bubbles {
@@ -170,7 +179,9 @@
   .hero-section {
     flex-direction: column;
     text-align: center;
-    gap: 80px;
+    gap: 40px;
+    min-height: auto;
+    padding-bottom: 20px;
   }
 
   .name-header {
@@ -187,17 +198,48 @@
   }
 
   .image-frame {
-    width: 320px;
-    height: 320px;
+    width: 260px;
+    height: 260px;
+  }
+  .expertise-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .expertise-card {
+    padding: 24px;
   }
 }
 
 @media (max-width: 600px) {
+  .hero-section {
+    gap: 24px;
+    padding-top: 20px;
+  }
+
   .name-header {
-    font-size: 2.8rem;
+    font-size: 2.4rem;
   }
   
   .typewriter-container {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+  }
+
+  .hero-bio {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .name-header {
+    font-size: 2rem;
+  }
+  
+  .typewriter-container {
+    font-size: 1.2rem;
+  }
+
+  .hero-actions .btn-primary {
+    width: 100%;
+    text-align: center;
   }
 }

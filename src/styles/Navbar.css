@@ -17,7 +17,8 @@
   padding: 8px 16px;
   gap: 40px;
   border-radius: 100px;
-  min-width: 400px;
+  min-width: 280px;
+  max-width: 600px;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -88,9 +89,9 @@
 
 @media (max-width: 768px) {
   .pill-navbar {
-    min-width: 90%;
+    min-width: 100%;
     margin: 0 16px;
-    padding: 8px 20px;
+    padding: 8px 16px;
   }
 
   .nav-links {

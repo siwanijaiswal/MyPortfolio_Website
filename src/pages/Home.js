@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Home.css";
-import jais_resume from "../assets/jais_resume.pdf";
+import jais_resume from "../assets/Siwani_resume.pdf";
 import myimg from "../assets/myimg.jpeg";
 
 function Home() {
@@ -41,9 +41,9 @@ function Home() {
     }
   };
 
-  const front_end = ["HTML", "CSS", "ReactJS", "AngularJS", "BootStrap", "Javascript"];
-  const back_end = ["NodeJS", "MySQL", "MongoDB", "DigitalOcean", "PHP"];
-  const languages = ["C", "C++", "JavaScript", "Python"];
+  const languages = ["TypeScript", "JavaScript", "C/C++", "Python"];
+  const tech_stacks = ["ReactJs", "NextJs", "NodeJs", "Tailwind CSS", "HTML", "CSS"];
+  const databases_tools = ["MongoDB", "Firebase", "MySQL", "Git", "Postman", "Figma"];
 
   return (
     <div className="home-container">
@@ -58,9 +58,7 @@ function Home() {
             <span className="cursor">|</span>
           </h2>
           <p className="hero-bio">
-            I'm a passionate developer focused on building functional and aesthetically 
-            pleasing web applications. Currently diving deep into Data Structures, 
-            Algorithms, and Machine Learning.
+            I am a Software Developer with 2 years of experience specializing in React and modern web technologies, passionate about building high-performance, dynamic applications.
           </p>
           <div className="hero-actions">
             <a href={jais_resume} download="siwanijaiswal_resume.pdf" className="btn-primary">
@@ -82,21 +80,21 @@ function Home() {
         <h2 className="section-title">What <span className="gradient-text">I Do</span></h2>
         <div className="expertise-grid">
           <div className="expertise-card glass-card">
-            <h3>Front-End</h3>
+            <h3>Tech Stacks</h3>
             <div className="skill-bubbles">
-              {front_end.map(skill => <span key={skill}>{skill}</span>)}
-            </div>
-          </div>
-          <div className="expertise-card glass-card">
-            <h3>Back-End</h3>
-            <div className="skill-bubbles">
-              {back_end.map(skill => <span key={skill}>{skill}</span>)}
+              {tech_stacks.map(skill => <span key={skill}>{skill}</span>)}
             </div>
           </div>
           <div className="expertise-card glass-card">
             <h3>Languages</h3>
             <div className="skill-bubbles">
               {languages.map(skill => <span key={skill}>{skill}</span>)}
+            </div>
+          </div>
+          <div className="expertise-card glass-card">
+            <h3>Databases & Tools</h3>
+            <div className="skill-bubbles">
+              {databases_tools.map(skill => <span key={skill}>{skill}</span>)}
             </div>
           </div>
         </div>

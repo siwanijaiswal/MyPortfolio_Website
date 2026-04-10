@@ -45,10 +45,7 @@
 }
 
 body {
-  background-color: var(--bg-color);
-  color: var(--text-primary);
   font-family: var(--font-main);
-  transition: background-color 0.3s ease, color 0.3s ease;
   overflow-x: hidden;
 }
 
@@ -58,6 +55,9 @@ h1, h2, h3, h4 {
 
 .App {
   min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .content {
@@ -65,11 +65,17 @@ h1, h2, h3, h4 {
 }
 
 section {
-  min-height: 100vh;
+  min-height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 80px 24px;
+  padding: 40px 24px;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 15px 16px;
+  }
 }
 
 .glass-card {
